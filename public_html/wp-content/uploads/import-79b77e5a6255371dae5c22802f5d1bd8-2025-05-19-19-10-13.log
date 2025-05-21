@@ -1,0 +1,36 @@
+
+Started Import Process
+# System Details: 
+Debug Mode 		: Disabled
+Operating System 	: Linux
+Software 		: LiteSpeed
+MySQL version 		: 10.11.10
+XML Reader 		: Yes
+PHP Version 		: 8.2.27
+PHP Max Input Vars 	: 5000
+PHP Max Post Size 	: 256M
+PHP Extension GD 	: Yes
+PHP Max Execution Time 	: 300
+Max Upload Size 	: 256 MB
+Memory Limit 		: Current memory limit 40M. We recommend setting memory to at least 64M.
+Timezone 		: 0
+
+-----
+
+Importing Started! - 18:03:49 UTC
+---
+
+WHY IMPORT PROCESS CAN FAIL? READ THIS - 
+https://wpastra.com/docs/?p=1314&utm_source=demo-import-panel&utm_campaign=import-error&utm_medium=wp-dashboard
+
+---
+
+Cache for Astra Addon cleared.
+Batch Process Started..
+Starter Templates - Importing Images for Blog name 'lightgoldenrodyellow-mallard-392016.hostingersite.com' (1)
+---- Processing Images from Widgets -----
+---- Processing Contact Form Mapping from Text Widgets -----
+---- Processing WordPress Posts / Pages - for Elementor ----
+---- Processing Mapping - for Astra Pro ----
+---- Processing batch process for Customizer start ----
+---- Processing batch process for Customizer done ----
