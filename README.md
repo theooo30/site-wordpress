@@ -104,9 +104,26 @@ Utilizatorii care doresc să se autentifice introduc un număr de telefon valid,
 
 Pe partea de autorizare a aplicației către serviciile cloud, autentificarea s-a realizat prin chei API. Acestea au fost configurate cu restricții stricte: în Firebase au fost setate domeniile autorizate, iar în Google Cloud au fost configurate restricții de referrer pentru a preveni utilizarea frauduloasă a cheii API.
 
+În consola Firebase, secțiunea „Authentication” a fost configurată pentru a permite autentificarea prin SMS. Această metodă a fost activată ca unic „Sign-in provider”, asigurând că aplicația poate genera și trimite coduri OTP prin infrastructura Firebase.
+
 ![WhatsApp Image 2025-05-22 at 21 50 22-5](https://github.com/user-attachments/assets/435dcc56-c1b8-4ef0-93eb-49430c578ffe)
+Figura 1 – Activarea metodei de autentificare prin telefon (SMS) în Firebase Authentication
 
+Pentru a asigura securitatea autentificării, Firebase permite trimiterea OTP-urilor doar către domenii care au fost anterior autorizate. În acest proiect, domeniul site-ului WordPress a fost adăugat explicit în lista de domenii permise, alături de cele implicite oferite de Firebase
+![WhatsApp Image 2025-05-22 at 21 50 22-4](https://github.com/user-attachments/assets/17afb3f2-8e25-46c0-babf-a54c46c7fa97)
+Figura 2 – Configurarea domeniilor autorizate în consola Firebase pentru activarea login-ului cu OTP
 
+Pentru integrarea hărții Google Maps pe pagina de contact, a fost generată o cheie API dedicată în Google Cloud Platform. Aceasta a fost restricționată astfel încât să poată fi folosită doar de către site-ul proiectului, prevenind folosirea abuzivă de către alte aplicații.
+![WhatsApp Image 2025-05-22 at 21 50 22-3](https://github.com/user-attachments/assets/379cd93f-d924-499d-a80a-de2d48b9ba00)
+Figura 3 – Restricționarea cheii API la nivel de domeniu pentru protecția accesului la Google Maps
+
+Pentru ca funcționalitatea Google Maps să fie completă, în consola Google Cloud au fost activate mai multe API-uri necesare, printre care: Maps JavaScript API, Geolocation API, Directions API și Geocoding API. Acestea au fost activate pentru proiectul dedicat site-ului.
+![WhatsApp Image 2025-05-22 at 21 50 22-2](https://github.com/user-attachments/assets/8cc67914-db27-4545-9941-1ec9e8741248)
+Figura 4 – Lista API-urilor activate pentru funcționarea integrării Google Maps în site
+
+Maps JavaScript API a fost serviciul principal activat pentru afișarea interactivă a hărții în pagina de contact. Acest serviciu oferă funcționalități avansate de afișare, marcare locații și interacțiuni dinamice în interfața site-ului.
+![WhatsApp Image 2025-05-22 at 21 50 22](https://github.com/user-attachments/assets/50d59896-041b-47ba-9ef5-12989c6f5897)
+Figura 5 – Activarea serviciului Maps JavaScript API din Google Cloud pentru randarea hărții
 
 # capturi de ecran aplicatie
 
