@@ -85,13 +85,28 @@ Pe lângă autentificare, aplicația mai trimite și cereri GET către serviciil
 Figura 10 – Încărcarea hărții Google Maps în pagina de contact a site-ului
 
 
-
-
-
  ## metode http
+Aplicația web construită pe WordPress comunică atât cu serviciile externe, cât și cu backend-ul propriu prin intermediul protocoalelor HTTP. Aceste protocoale definesc modul în care clientul (browserul) trimite cereri către server, iar serverul răspunde cu informațiile solicitate. În cadrul proiectului, cele mai utilizate metode HTTP sunt GET și POST.
 
+Metoda POST este folosită în toate interacțiunile care implică trimiterea de date confidențiale sau actualizarea unor informații. Un exemplu clar este autentificarea prin OTP, unde aplicația trimite date precum numărul de telefon și codul de verificare către Firebase Authentication, prin cereri POST. De asemenea, după autentificare, utilizatorul este redirecționat printr-o cerere POST către pagina de cont personal. La nivel intern, metodele POST sunt utilizate și pentru trimiterea datelor completate în formulare: trimiterea numărului de telefon în etapa de login, salvarea datelor de cont, schimbarea parolei, sau modificarea adreselor de livrare și facturare. Aceste acțiuni se realizează de obicei prin intermediul endpointului admin-ajax.php sau prin pagini WordPress specifice, configurate de pluginul WooCommerce.
+
+Metoda GET este utilizată pentru obținerea de informații care nu implică modificarea datelor de pe server. Este folosită, de exemplu, atunci când utilizatorul accesează pagina de contact, iar browserul face o cerere GET către serviciul Google Maps pentru a încărca harta. De asemenea, accesarea paginilor statice ale site-ului sau a taburilor din pagina „My Account” (precum „Orders”, „Addresses” sau „Account details”) se face prin GET.
+
+Metodele PUT, PATCH și DELETE nu sunt utilizate în acest proiect, deoarece site-ul nu efectuează operații directe de actualizare sau ștergere asupra resurselor externe. Totuși, unele pluginuri pot folosi metode suplimentare în fundal, dar la nivelul utilizatorului final și al aplicației prezentate, GET și POST sunt metodele esențiale care guvernează toate schimburile de date.
+
+În concluzie, prin combinarea corectă a cererilor GET (pentru obținerea de date) și POST (pentru trimiterea și salvarea acestora), aplicația oferă un flux complet de funcționalitate — de la autentificare, până la gestionarea contului personal și integrarea cu servicii cloud precum Firebase și Google Maps.
  
  ## autentificare si autorizare servicii utilizate
+
+ În cadrul acestui proiect, autentificarea utilizatorului în site a fost realizată exclusiv prin intermediul serviciului Firebase Authentication, folosind metoda OTP (One Time Password) prin SMS. Alegerea acestui mecanism modern a fost motivată de dorința de a oferi o experiență sigură și rapidă de login, eliminând complet utilizarea parolelor clasice. În paralel, aplicația a fost configurată să se conecteze în mod sigur la serviciile externe — Firebase și Google Maps — prin mecanisme de autorizare bazate pe chei API și restricții stricte de domeniu.
+
+Utilizatorii care doresc să se autentifice introduc un număr de telefon valid, iar aplicația trimite o cerere către Firebase pentru generarea și trimiterea codului OTP. După introducerea acestuia, sistemul validează codul și autentifică utilizatorul. Ulterior, acesta are acces doar la datele proprii: comenzile, adresele și detaliile contului.
+
+Pe partea de autorizare a aplicației către serviciile cloud, autentificarea s-a realizat prin chei API. Acestea au fost configurate cu restricții stricte: în Firebase au fost setate domeniile autorizate, iar în Google Cloud au fost configurate restricții de referrer pentru a preveni utilizarea frauduloasă a cheii API.
+
+![WhatsApp Image 2025-05-22 at 21 50 22-5](https://github.com/user-attachments/assets/435dcc56-c1b8-4ef0-93eb-49430c578ffe)
+
+
 
 # capturi de ecran aplicatie
 
