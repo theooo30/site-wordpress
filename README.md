@@ -43,17 +43,47 @@ Un al doilea exemplu este legat de afișarea hărții Google Maps în pagina de 
 
 În ambele cazuri, schimburile de date se bazează pe protocoale HTTP și sunt gestionate de pluginurile instalate în WordPress. Aceste exemple ilustrează cum se realizează, în practică, fluxul de date între aplicația web și serviciile externe prin intermediul mecanismului request/response.
 
+Pentru început, atunci când utilizatorul inițiază înregistrarea cu număr de telefon, este trimisă o cerere POST către endpointul local al site-ului WordPress, mai exact /wp-admin/admin-ajax.php. Această cerere declanșează trimiterea unui cod OTP către telefonul utilizatorului, folosind serviciul Firebase în fundal.
+
 <img width="1325" alt="Screenshot 2025-05-22 at 20 55 21" src="https://github.com/user-attachments/assets/8fce7cbb-6ae2-4249-9788-4a3870052915" />
+Figura 1 – Cerere POST trimisă către serverul WordPress pentru inițierea autentificării OTP
+
+După ce cererea este procesată, Firebase trimite un mesaj SMS către utilizator, care conține codul unic de autentificare. Acest cod este introdus ulterior pentru verificarea identității.
 <img width="696" alt="Screenshot 2025-05-22 at 20 55 42" src="https://github.com/user-attachments/assets/7f47cb46-72cf-49c7-8455-0af24f7710e9" />
+Figura 2 – Mesaj SMS primit de utilizator cu codul de verificare OTP
+
+După introducerea codului în formularul de pe site, este trimisă o nouă cerere POST, de această dată către serviciul Firebase Authentication. Cererea conține codul OTP, iar răspunsul conține un token de autentificare.
 <img width="1327" alt="Screenshot 2025-05-22 at 20 56 53" src="https://github.com/user-attachments/assets/4eecc0fd-86ee-4f5d-a28c-9a183243f519" />
+Figura 3 – Cerere POST către Firebase pentru verificarea codului OTP introdus de utilizator
+
+Înainte de inițierea oricărui request, utilizatorul interacționează cu interfața de înregistrare sau autentificare, unde introduce numărul de telefon.
 <img width="1327" alt="Screenshot 2025-05-22 at 20 58 09" src="https://github.com/user-attachments/assets/7f841069-0f43-42c6-8ff6-19d4cbd96914" />
+Figura 4 – Formularul de înregistrare cu autentificare prin OTP
+
+După autentificare reușită, aplicația redirecționează utilizatorul către pagina de cont. Acest lucru este vizibil în cererea POST către /my-account/, urmată de un răspuns de tip 302 Found.
 <img width="1327" alt="Screenshot 2025-05-22 at 20 58 59" src="https://github.com/user-attachments/assets/cc92c04c-22b5-4520-9a73-23dddb669973" />
+Figura 5 – Cerere POST de redirecționare către pagina de cont după login reușit
+
+Fluxul este similar și în cazul autentificării unui utilizator deja înregistrat. Acesta introduce din nou numărul de telefon în formularul de login.
 <img width="1327" alt="Screenshot 2025-05-22 at 20 59 33" src="https://github.com/user-attachments/assets/b0193e20-1978-40e6-9ce1-97cf8ce844db" />
+Figura 6 – Formularul de autentificare OTP pentru utilizatori existenți
+
+La apăsarea butonului de trimitere cod, este trimisă o cerere POST către Firebase pentru generarea unui nou cod OTP.
 <img width="1327" alt="Screenshot 2025-05-22 at 21 01 41" src="https://github.com/user-attachments/assets/341356d8-c421-4a2a-bae5-25fe5058ffb7" />
+Figura 7 – Cerere POST către Firebase pentru trimiterea codului OTP
+
+Similar ca în prima secvență, utilizatorul primește un cod de verificare nou prin SMS.
 <img width="701" alt="Screenshot 2025-05-22 at 21 02 10" src="https://github.com/user-attachments/assets/a44cf4a1-5f7f-451b-b6a1-5a77442c06f7" />
+Figura 8 – Cod OTP primit de utilizator pentru autentificare
+
+După introducerea noului cod OTP, cererea de verificare este trimisă din nou către Firebase, iar răspunsul conține tokenul de autentificare.
 <img width="1317" alt="Screenshot 2025-05-22 at 21 03 41" src="https://github.com/user-attachments/assets/b1033d85-cdac-4a8c-966b-650ac21db2fb" />
+Figura 9 – Cerere POST către Firebase pentru confirmarea codului OTP
+
+Pe lângă autentificare, aplicația mai trimite și cereri GET către serviciile Google Maps atunci când utilizatorul accesează pagina de contact. Răspunsul conține datele necesare pentru randarea hărții.
 <img width="1317" alt="Screenshot 2025-05-22 at 21 09 20" src="https://github.com/user-attachments/assets/8a9680be-0f65-4c52-a2a7-7266691bd40e" />
-<img width="1317" alt="Screenshot 2025-05-22 at 21 09 26" src="https://github.com/user-attachments/assets/def3dd7b-1bc1-4fe8-9596-e2c6d6ad0f93" />
+Figura 10 – Încărcarea hărții Google Maps în pagina de contact a site-ului
+
 
 
 
