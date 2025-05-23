@@ -81,6 +81,9 @@ După introducerea noului cod OTP, cererea de verificare este trimisă din nou c
 Figura 9 – Cerere POST către Firebase pentru confirmarea codului OTP
 
 Pe lângă autentificare, aplicația mai trimite și cereri GET către serviciile Google Maps atunci când utilizatorul accesează pagina de contact. Răspunsul conține datele necesare pentru randarea hărții.
+<img width="1317" alt="Screenshot 2025-05-22 at 21 09 26" src="https://github.com/user-attachments/assets/c1039cb5-6ba8-443d-83a6-24ea024dfec6" />
+Figura 11 - Cererea GET catre Google Maps
+
 <img width="1317" alt="Screenshot 2025-05-22 at 21 09 20" src="https://github.com/user-attachments/assets/8a9680be-0f65-4c52-a2a7-7266691bd40e" />
 Figura 10 – Încărcarea hărții Google Maps în pagina de contact a site-ului
 
@@ -151,7 +154,7 @@ După login, utilizatorul are acces la zona personală unde poate vizualiza come
 
 Capturile prezentate demonstrează funcționalitatea completă a aplicației, atât din punct de vedere al interacțiunii utilizatorului cât și al integrării cu servicii externe prin API.
 
-#referinte
+# referinte
 
 - Firebase Authentication – Documentație oficială:
 https://firebase.google.com/docs/auth
