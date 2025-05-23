@@ -1,9 +1,9 @@
 # site-wordpress, Danila Theodora, 1132 SIMPRE
 
 
-# link video:
+# link video: https://youtu.be/A7g-p3SH3us
 
-# link publicare:
+# link publicare: https://lightgoldenrodyellow-mallard-392016.hostingersite.com
 
 # introducere:
 
@@ -127,6 +127,46 @@ Figura 5 – Activarea serviciului Maps JavaScript API din Google Cloud pentru r
 
 # capturi de ecran aplicatie
 
+Următoarele capturi de ecran ilustrează aspectul vizual al aplicației și principalele funcționalități disponibile pentru utilizator. Aplicația are o interfață prietenoasă și responsive, fiind structurată pe baza unei teme WordPress optimizate pentru comerț electronic.
+
+<img width="1710" alt="Screenshot 2025-05-23 at 22 28 06" src="https://github.com/user-attachments/assets/efee24d6-e62f-4236-b90e-78012b556a2c" />
+Figura 1 – Pagina principală a magazinului
+Pagina de start oferă o prezentare vizuală clară a produselor naturale promovate de magazin, evidențiind conceptul eco-friendly al platformei.
+
+<img width="1710" alt="Screenshot 2025-05-23 at 22 29 29" src="https://github.com/user-attachments/assets/c919950f-aee2-422b-99ce-086466842a20" />
+Figura 2 – Produsele bestseller afișate pe homepage
+Sunt afișate cele mai vândute produse, cu imagini, prețuri și posibilitatea de adăugare rapidă în coș. Se observă și badge-ul „Sale” pe produsele reduse.
+
+<img width="1710" alt="Screenshot 2025-05-23 at 22 30 49" src="https://github.com/user-attachments/assets/762fbc75-bf1e-44e7-82d7-33b8d4ea6cad" />
+Figura 3 – Pagina magazinului (Shop) cu filtrare
+Pagina „Shop” oferă posibilitatea de filtrare a produselor după preț și categorie, fiind implementată cu funcționalități WooCommerce standard.
+
+<img width="1710" alt="Screenshot 2025-05-23 at 22 32 18" src="https://github.com/user-attachments/assets/528331ff-eb16-4804-ac70-7cd6974c032c" />
+Figura 4 – Pagina de contact cu integrarea Google Maps
+În această pagină este afișată harta interactivă cu locațiile marcate, folosind Google Maps JavaScript API și un plugin WordPress dedicat.
+
+<img width="1710" alt="Screenshot 2025-05-23 at 22 33 47" src="https://github.com/user-attachments/assets/c2665505-0828-49d3-9b26-226425799065" />
+Figura 5 – Secțiunea „My Account” după autentificare
+După login, utilizatorul are acces la zona personală unde poate vizualiza comenzile, gestiona adresele, modifica parola sau descărca produse.
+
+Capturile prezentate demonstrează funcționalitatea completă a aplicației, atât din punct de vedere al interacțiunii utilizatorului cât și al integrării cu servicii externe prin API.
+
+#referinte
+
+- Firebase Authentication – Documentație oficială:
+https://firebase.google.com/docs/auth
+- Configurare OTP Authentication în Firebase:
+https://firebase.google.com/docs/auth/web/phone-auth
+- WordPress – Site oficial și documentație:
+https://wordpress.org/support/
+- WP Go Maps (fost WP Google Maps) – Plugin pentru integrarea hărților:
+https://www.wpgmaps.com/
+- Maps JavaScript API – Documentație oficială:
+https://developers.google.com/maps/documentation/javascript/overview
+- OTP Login/Signup for WooCommerce – Plugin pentru login cu număr de telefon:
+https://wordpress.org/plugins/otp-login/
+- Burp Suite – Instrument de testare pentru interceptare requesturi:
+https://portswigger.net/burp/documentation
 
 
 
